@@ -1,0 +1,9 @@
+{
+    "name": "slumber",
+    "version": "0.1",
+    "description": "An app that forces users to go to sleep",
+    "main": "main.js",
+    "devDependencies": {
+        "electron": "~1.6.2"
+    }
+}
