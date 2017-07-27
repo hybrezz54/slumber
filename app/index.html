@@ -33,15 +33,21 @@
 
         <!-- Main bootstrap container -->
         <div id="main" class="container-fluid">
-            <p>
+            <p class="text-center">
                 I'd like to go to sleep at:
             </p>
 
-            <div>
-                <input type="number" name="hour" min="1" max="12" required>
-                <input type="number" name="tens" min="0" max="5" required>
-                <input type="number" name="minutes" min="0" max="9" required>
-            </div>
+            <form class="time text-center">
+                <input type="text" pattern="\d*" name="hour" min="1" max="12" maxlength="2" required>
+                :
+                <input type="text" pattern="\d*" name="minutes" min="0" max="59" minlength="2" maxlength="2" required>
+
+                <div class="dropdown">
+                    <button onclick="expandMeridien" class="dropdown">AM</button>
+                    <div id="meridien" class="dropdown-content">
+                    </div>
+                </div>
+            </form>
         </div>
     </body>
 
