@@ -1,0 +1,12 @@
+{
+  "name": "slumber",
+  "version": "0.1.0",
+  "description": "A tool that automatically shuts down your computer as scheduled",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^2.0.3"
+  }
+}
