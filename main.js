@@ -1,8 +1,16 @@
 // declare imports
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain, Tray} = require('electron')
 
-// global reference to app window
+// retain global references
 let win
+let tray
+
+/**
+ * Create app tray
+ */
+function createTray() {
+    // TODO
+}
 
 /**
  * Create the app window
@@ -12,8 +20,11 @@ function createWindow() {
     win = new BrowserWindow({
         width: 1046, 
         height: 684,
-        center: true
+        center: true,
+        title: 'Slumber',
+        resizable: false
     })
+    win.setMenu(null)
     win.loadFile('index.html')
 
     // dereference window when closed
@@ -23,7 +34,10 @@ function createWindow() {
 }
 
 // wait for electron to be initialized
-app.on('ready', createWindow)
+app.on('ready', () => {
+    createTray()
+    createWindow()
+})
 
 // quit when all windows are closed
 app.on('window-all-closed', () => {
