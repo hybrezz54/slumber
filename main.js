@@ -1,5 +1,6 @@
-// declare imports
+// import modules
 const {app, BrowserWindow, ipcMain, Tray} = require('electron')
+const shutdown = require('electron-shutdown-command')
 
 // retain global references
 let win
@@ -51,4 +52,12 @@ app.on('window-all-closed', () => {
 // recreate window when closed yet active on os x
 app.on('activate', () => {
     if (win == null) createWindow()
+})
+
+// shutdown computer
+ipcMain.on('shutdown', (event, arg) => {
+    shutdown.shutdown({
+        sudo: true,
+        quitapp: true
+    })
 })
