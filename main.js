@@ -27,6 +27,9 @@ function createWindow() {
     win.setMenu(null)
     win.loadFile('index.html')
 
+    // Open the DevTools.
+    win.webContents.openDevTools()
+
     // dereference window when closed
     win.on('closed', () => {
         win = null
