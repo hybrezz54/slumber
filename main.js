@@ -42,7 +42,7 @@ app.on('ready', () => {
 // quit when all windows are closed
 app.on('window-all-closed', () => {
     // stay active on os x systems
-    if (process.platform !== 'darwin') app.quit()
+    // if (process.platform !== 'darwin') app.quit()
 })
 
 // recreate window when closed yet active on os x
